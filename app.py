@@ -4,11 +4,16 @@ import streamlit as st
 from src.scraper import fetch_job_post
 from src.tagger import generate_tags, openai_key_status
 
-st.set_page_config(page_title="Generador de etiquetas LinkedIn", page_icon="🔖")
+st.set_page_config(page_title="Generador de etiquetas para busqueda directa ITENE", page_icon="🔖")
+
+# Muestra el logo en la barra lateral
+st.sidebar.image("assets/itene_logo.jpg", use_container_width=True)
+
 st.title("🔖 Generador de etiquetas para búsqueda directa")
 
+
 st.markdown(
-    "Ingresa el **enlace** a una oferta de trabajo y obtén una lista optimizada de etiquetas/hashtags para afinar tu búsqueda de candidatos en LinkedIn."
+    "Ingresa el **enlace** a una oferta de trabajo y obtén una lista optimizada de etiquetas/hashtags para afinar tu búsqueda de candidatos."
 )
 
 if not openai_key_status():
